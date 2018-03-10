@@ -10,7 +10,7 @@ gulp.task('sass', function () {
 });
  
 gulp.task('sass:watch', function () { //watch va compilando cada vez que guardas y lo refleja de inmediato
-  gulp.watch('./sass/**/*.scss', ['sass']);
+  gulp.watch('./app/scss/main.scss', ['sass']); //cada vez que cambie el archivo .scss, activa sass (es decir, compila y traduce). Eso es lo que está diciendo.
 });
 
-gulp.task('default', [ 'sass' ]);
+gulp.task('default', [ "sass", "sass:watch"]);//ejecutar sass y, en cuanto termine, ejecutewatch (se queda escuchando a la espera de cambios)
